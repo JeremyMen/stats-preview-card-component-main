@@ -1,0 +1,219 @@
+/*
+## Colors
+
+- Very dark blue (main background): hsl(233, 47%, 7%)
+- Dark desaturated blue (card background): hsl(244, 38%, 16%)
+- Soft violet (accent): hsl(277, 64%, 61%)
+
+- White (main heading, stats): hsl(0, 0%, 100%)
+- Slightly transparent white (main paragraph): hsla(0, 0%, 100%, 0.75)
+- Slightly transparent white (stat headings): hsla(0, 0%, 100%, 0.6)
+*/
+
+/* 
+=================
+  Basic reset
+=================
+*/
+
+/*
+* border-box: it changes the box model so that 
+* the borders and the paddings are no longer added
+* to the total with or the total height that we specify for a box
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*
+* Everything related to the font, we always specify it in the body selector
+* taking advantage of the inheritance
+*
+* line-height: 1.7 means that it's 1.7 times bigger than the predefined line height
+*/
+
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  line-height: 1.3;
+  color: hsl(0, 0%, 100%);
+}
+
+/*
+* height: 95vh; means that the height of sections elements will be 95% of the viewport
+*/
+
+section {
+  height: 100vh;
+  background-color: hsl(233, 47%, 7%);
+}
+
+/*
+=================
+  COLORS
+=================
+*/
+
+.soft-violet {
+  color: hsl(277, 64%, 61%);
+}
+
+/*
+=================
+  REUSABLES
+=================
+*/
+
+.d-flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.justify-content-around {
+  justify-content: space-around;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+/*
+=================
+  GENERALES
+=================
+*/
+
+.card {
+  width: 80%;
+  height: 52%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.card > div:first-child {
+  background-color: hsl(244, 38%, 16%);
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.card > div:last-child {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.card-image {
+  width: 100%;
+  background: linear-gradient(hsla(277, 64%, 61%, 1), hsl(277, 64%, 61%, 1)),
+    url("./images/image-header-desktop.jpg");
+  background-blend-mode: multiply;
+  background-size: cover;
+}
+
+.card-body-background {
+  width: 100%;
+}
+
+.card-body-text {
+  height: 100%;
+  padding: 2em;
+}
+
+.card-title {
+  font-size: 2.4em;
+  width: 75%;
+}
+
+.card-info {
+  margin-top: 2em;
+  height: 50%;
+  width: 75%;
+}
+
+.card-description {
+  color: hsla(0, 0%, 100%, 0.75);
+  line-height: 1.7em;
+}
+
+li span:first-child {
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+li span:nth-child(2) {
+  margin-top: 0.5em;
+  font-size: 0.8em;
+  letter-spacing: 0.1em;
+  color: hsla(0, 0%, 100%, 0.6);
+}
+
+.attribution {
+  color: black;
+}
+
+@media (max-width: 967px) {
+  section {
+    height: 150vh;
+    background-color: hsl(233, 47%, 7%);
+  }
+
+  .card {
+    height: auto;
+    flex-direction: column-reverse;
+  }
+
+  .card-image {
+    height: 18em;
+  }
+
+  .card > div:first-child {
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+
+  .card > div:last-child {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 0px;
+    border-top-left-radius: 20px;
+  }
+
+  .card-title {
+    text-align: center;
+    font-size: 2em;
+    width: auto;
+  }
+
+  .card-info {
+    height: auto;
+    width: auto;
+  }
+
+  .card-description {
+    text-align: center;
+  }
+
+  .card-statistics {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  ul li {
+    margin-top: 2em;
+  }
+}
